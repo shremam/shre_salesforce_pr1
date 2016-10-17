@@ -1,0 +1,20 @@
+<messaging:emailTemplate subject="Invoice mail" recipientType="User" relatedToType="Expense_Member__c">
+
+
+<messaging:attachment renderAs="PDF" filename="Invoice.pdf">
+    <html>
+        <head/>
+        <body>
+            Thanks for the Contribution {!relatedTo.Expense__r.Event__c} 
+            
+           
+            
+        </body>
+    </html>
+</messaging:attachment>
+
+<messaging:plainTextEmailBody >
+Congratulations!
+This is your new Visualforce Email Template.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

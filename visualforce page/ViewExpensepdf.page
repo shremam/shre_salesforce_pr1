@@ -1,0 +1,56 @@
+<apex:page standardController="Expense__c" renderAs="pdf" standardStylesheets="false" extensions="ExtnExpense" action="{!getExpenseMembers}">
+    
+    
+    
+    
+  <html>
+           <h1 style="text-align:center"><u>EXPENSE DETAIL</u></h1>
+        
+        <body style="background-color:yellow;">
+            
+            <table border="2"  width="710px" Class="center" >
+              <tr>
+                 <td> AMOUNT</td>
+                 <td>{!Expense__c.Amount__c}</td>
+              </tr>
+              <tr>
+                    <td>EVENT DATE</td>
+                    <td>{!Expense__c.Date__c} </td>
+              </tr>
+              <tr>
+                    <td>EVENT</td>
+                    <td>{!Expense__c.Event__c}</td>
+              </tr>
+            
+            </table>
+            
+            <br/>
+            
+            <h2 style="text-align:center"><u>DETAILS OF THE MEMBERS CONTRIBUTING</u></h2>
+            
+           
+            
+             
+            
+            <apex:repeat value="{!l}" var="i">
+            
+                <tr>
+                    <td>ID :</td>
+                    <td>{!i.Name}</td><br/> 
+                </tr>
+                <tr>
+                    <td>NAME :</td>
+                    <td>{!i.EMember__r.First_Name__c}{!i.EMember__r.Last_Name__c} </td><br/>
+                </tr>
+                <tr>
+                    <td>CONTRIBUTED AMOUNT :</td>
+                   <td> {!i.Contributed_Amount__c }</td><br/>
+                </tr>
+                
+               
+            </apex:repeat>    
+        </body>
+    </html>
+
+
+</apex:page>
